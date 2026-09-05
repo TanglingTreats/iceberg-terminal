@@ -1,0 +1,41 @@
+#+TITLE: Iceberg Terminal Research
+
+Order Book Matching Engine & Algorithmic Trading Simulator
+
+In-memory Limit Order Book (LOB)
+
+Problem statement: How do we keep track of orders at different price levels and fulfill these orders when the prices intersect? How to guarantee that the top priority order is executed first
+
+* Requirements of an Order Book Matching Engine
+To match orders that come first. (Price time priority basis)
+
+See market depth on bid-ask orders
+
+Order operations
+
+Sub-millisecond latency
+
+* Components in this engine
+Order Book:
+- Buy orders
+- Sell orders
+- Order history
+
+* Data Structures
+Ring Buffer - Constant time queue operations. For buy and sell orders
+
+
+
+
+
+* References:
+- https://electronictradinghub.com/matching-engine-architecture-why-your-order-book-data-structure-is-the-real-latency-bottleneck/
+- https://web.archive.org/web/20110219163448/http://howtohft.wordpress.com/2011/02/15/how-to-build-a-fast-limit-order-book/
+
+- https://www.aussieai.com/book/free-pdf
+- https://www.aussieai.com/book/ultra-low-latency
+
+- https://github.com/charles-cooper/itch-order-book
+- https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf
+- https://web.archive.org/web/20141222151051/https://dl.dropboxusercontent.com/u/3001534/engine.c
+  
