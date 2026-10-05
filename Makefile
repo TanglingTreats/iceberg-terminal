@@ -5,12 +5,13 @@ CXX = g++
 
 CXXFLAGS = -std=c++17
 CXXFLAGS += -pedantic
-CXXFLAGS += -I.
+CXXFLAGS += -Iinclude
 
-SOURCES = main.cc order-entry.cc
+SRC_DIR = src
+SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
 
 ODIR = obj
-OBJS = $(patsubst %,$(ODIR)/%,$(addsuffix .o, $(basename $(SOURCES))))
+OBJS = $(patsubst %(SRC_DIR)/%.cpp, $(ODIR)/%.o, $(SOURCES))
 
 all: $(EXE)
 
@@ -19,7 +20,7 @@ debug: $(EXE_DEBUG)
 $(ODIR):
 	mkdir -p $@
 
-$(ODIR)/%.o: %.cc | $(ODIR)
+$(ODIR)/%.o: $(SRC_DIR)/%.cpp | $(ODIR)
 	printf "$(OBJS)"
 	$(CXX) $(CXXFLAGS) -c -o  $@ $<
 
