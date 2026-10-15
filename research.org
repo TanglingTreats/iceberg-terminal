@@ -26,8 +26,10 @@ Ring Buffer - Constant time queue operations. For buy and sell orders
 
 
 * TODO v1
-- [ ] Add basic structures to hold buy and sell orders (Future: Fixed size memory pool and Intrusive Double Linked List)
-- Represent floating points as flat integers
+- [X] Order structure. Buy or sell type. Order Id. Quantity. Price.
+- [ ] Limit Levels. Hold orders of a price in a queue.
+- [ ] Hash set of Order ID and Order
+- [ ] Represent floating points as flat integers
 - [ ] Add unit tests with Google Test suite
 - [ ] Add Google Benchmark
 
