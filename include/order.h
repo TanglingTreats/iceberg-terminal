@@ -5,7 +5,7 @@ using OrderId = double;
 using Price = double;
 using Quantity = double;
 
-enum class Side {
+enum class Side { // enum class prevents name clashes
   Buy,
   Sell
 };
@@ -18,7 +18,11 @@ struct Order {
 
   Side side;
 
-  Order(OrderId id, Price price, Quantity qty, Side side) : id(id), price(price), quantity(qty), side(side) {};
+  // Intrusive doubly LL
+  Order *next;
+  Order *prev;
+
+  Order(OrderId id, Price price, Quantity qty, Side side) : id(id), price(price), quantity(qty), side(side) {}
 
 };
 
